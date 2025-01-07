@@ -1,0 +1,89 @@
+#include<iostream>
+using namespace std;
+class complex 
+{
+    double real;
+    double img;
+    public:
+    comlplex();
+    friend istream & operator>>(istream & complex &);
+    friend ostream & operator<<(ostream&complex&);
+    complex operator+(complex);
+    complex operator*(complex);
+};
+
+complex::complex()
+{
+    real=0;
+    img=0;
+}
+
+istream&operator>>(istream&,complex&i)
+{
+    cin>>i.reaal>>i.img;
+    return cin;
+
+}
+
+ostream&operator<<(ostream&,const complex&d)
+{
+    cout<<d.real<<"+"<<d.img<<"i"<<endl;
+    return cout;
+
+}
+complex complex::operator+(complex c1)
+{
+    complex temp;
+    temp.real=real+c1.real;
+    temp.img=img+c1.img;
+    return tmep;
+}
+complex complex::operator*(complex c2)
+{
+    complex tmp;
+    tmp.real=real*c2.real-img*c2.img;
+    tmp.img=real*c2.img+img*c2.real;
+    return tmp;
+
+}
+
+int main()
+{
+    complex c1,c2,c3,c4;
+    int flag=1;
+    char b;
+    while(flag==1)
+    {
+        cout<<"Enter Real and Imaginary part of the complex number1:\n";
+        cin>>c1;
+            }
+    cout<<"Enter Real and imaginary part of the complex number 2:\n";
+    cin>>c2;
+    int f=1;
+    while(f==1)
+    {
+        cout<<"complex number 1:"<<c1<<endl;
+        cout<<"complex number 2"<<c2<<endl;
+        cout<<"***menu***";
+        cout<<"1.Addition of complex numbers"<<endl;
+        cout<<"2.multiplication of complex numbers"<<endl;
+        cout<<"3.exit\n";
+        int a;
+        cout<<"Enter your choice from above menu(1 to 3):"
+        cin>>a;
+        if(a==1)
+        c3=c1+c2;
+        cout<<"addition of"<<c3<<endl;
+        cout<<"do you want to perform another operation(y/n):\n";
+        cin>>b;
+        if(b=="y"||b=="Y")
+        {
+            f=1;
+        }    
+        else{
+            cout<<"Thanks for using program";
+            flag=0;
+            f=0;
+
+        }}
+        }
